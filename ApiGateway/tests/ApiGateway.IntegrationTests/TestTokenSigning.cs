@@ -7,8 +7,8 @@ namespace ApiGateway.IntegrationTests;
 
 internal sealed class TestTokenSigning : IDisposable
 {
-    public const string Issuer = "peaker-auth";
-    public const string Audience = "peaker-gateway";
+    public const string Issuer = "ascenda-auth";
+    public const string Audience = "ascenda-gateway";
 
     private static readonly JsonWebTokenHandler TokenHandler = new() { SetDefaultTimesOnTokenCreation = false };
 
@@ -34,7 +34,7 @@ internal sealed class TestTokenSigning : IDisposable
             Claims = new Dictionary<string, object>
             {
                 ["sub"] = Guid.CreateVersion7().ToString(),
-                [PeakerRoles.ClaimType] = roles
+                [AscendaRoles.ClaimType] = roles
             },
             SigningCredentials = new SigningCredentials(new RsaSecurityKey(_rsa), SecurityAlgorithms.RsaSha256)
         };

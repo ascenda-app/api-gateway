@@ -96,7 +96,7 @@ public sealed class RouteAuthorizationTests : IDisposable
     public async Task AdminRoute_WithAnAdminToken_IsNotRejectedAtTheGateway(string method, string path)
     {
         using HttpResponseMessage response = await SendSignedAsync(
-            method, path, _tokenSigning.CreateAccessToken(PeakerRoles.Admin));
+            method, path, _tokenSigning.CreateAccessToken(AscendaRoles.Admin));
 
         response.StatusCode.Should().NotBe(HttpStatusCode.Unauthorized);
         response.StatusCode.Should().NotBe(HttpStatusCode.Forbidden);
@@ -107,7 +107,7 @@ public sealed class RouteAuthorizationTests : IDisposable
     public async Task ProtectedRoute_WithATokenForAnotherService_IsRejectedAtTheGateway(string method, string path)
     {
         using HttpResponseMessage response = await SendSignedAsync(
-            method, path, _tokenSigning.CreateAccessTokenForAudience("peaker-account"));
+            method, path, _tokenSigning.CreateAccessTokenForAudience("ascenda-account"));
 
         response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
     }

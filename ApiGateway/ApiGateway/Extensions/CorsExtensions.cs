@@ -2,7 +2,7 @@ namespace ApiGateway.Extensions;
 
 internal static class CorsExtensions
 {
-    public const string PolicyName = "peaker-clients";
+    public const string PolicyName = "ascenda-clients";
 
     private const string OriginsKey = "Cors:AllowedOrigins";
     private const string CorrelationHeader = "X-Correlation-Id";
