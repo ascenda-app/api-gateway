@@ -6,7 +6,7 @@ namespace ApiGateway.Middlewares;
 
 internal sealed class AuthIdentifierMiddleware(RequestDelegate next)
 {
-    public const string ItemKey = "peaker.auth-identifier";
+    public const string ItemKey = "ascenda.auth-identifier";
 
     private const int MaxInspectedBytes = 4 * 1024;
     private static readonly PathString AuthPath = new("/api/auth");

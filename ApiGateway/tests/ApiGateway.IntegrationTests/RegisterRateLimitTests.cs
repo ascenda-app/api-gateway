@@ -87,7 +87,7 @@ public sealed class RegisterRateLimitTests : IDisposable
             "/api/auth/register",
             new
             {
-                email = $"hiker-{Guid.CreateVersion7():N}@peaker.invalid",
+                email = $"hiker-{Guid.CreateVersion7():N}@ascenda.invalid",
                 username = "hiker",
                 password = "irrelevant",
                 acceptedTerms = true

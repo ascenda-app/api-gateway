@@ -8,7 +8,7 @@ using Xunit;
 namespace ApiGateway.IntegrationTests;
 
 /// <summary>
-/// El portal habla con el gateway desde su BFF, pero la app móvil de `peaker-mobile` itera en
+/// El portal habla con el gateway desde su BFF, pero la app móvil de `mobile` itera en
 /// navegador contra `vite dev`, y ahí el origen sí importa (MOBILE.md §1.5).
 /// </summary>
 public sealed class CorsTests : IDisposable
